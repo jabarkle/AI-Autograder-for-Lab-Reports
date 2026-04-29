@@ -4,31 +4,62 @@
 
 ---
 
-## Vision
+## ⬇️ Quick Install (TAs — start here)
 
-This system uses AI to assist TAs in grading student lab reports. The goal is not to replace TA judgment — it is to do the first-pass grading automatically so TAs spend their time reviewing and correcting AI grades rather than grading from scratch. The system works for **any lab report** that follows a standard section structure; the rubric schema is generated dynamically from the Ground Truth document.
+> **One-line install:** download the file for your OS from [the latest release](https://github.com/jabarkle/AI-Autograder-for-Lab-Reports/releases/latest), double-click it, follow the prompts. No Python, Node, or terminal required.
+
+### Windows
+
+1. Open the [**latest release page**](https://github.com/jabarkle/AI-Autograder-for-Lab-Reports/releases/latest).
+2. Under **Assets**, click **`LabGrader-Setup-1.0.0.exe`** (≈109 MB).
+3. When the download finishes, double-click the file from your Downloads folder.
+4. Windows will show **"Windows protected your PC"** — click **"More info"** → **"Run anyway"**. *(Only happens the first time.)*
+5. The installer runs silently and Lab Grader auto-launches. A **Lab Grader** shortcut appears on your Desktop and Start Menu.
+6. In the app, paste your Anthropic API key into the input box at the top of the main page. Done.
+
+### macOS — Apple Silicon (M1 / M2 / M3 / M4)
+
+1. Open the [**latest release page**](https://github.com/jabarkle/AI-Autograder-for-Lab-Reports/releases/latest).
+2. Under **Assets**, click **`LabGrader-1.0.0-arm64.dmg`** (≈137 MB).
+3. Open the downloaded `.dmg` file. A window appears with the **Lab Grader** icon and an **Applications** folder shortcut.
+4. **Drag** the Lab Grader icon **onto** the Applications folder.
+5. Open Launchpad (or Applications) → **right-click** Lab Grader → **Open** → click **Open** in the dialog. *(Only the first launch needs the right-click. After that just click normally.)*
+6. Paste your Anthropic API key into the input box at the top of the main page. Done.
+
+> Not sure if your Mac is Apple Silicon? Click the Apple menu → **About This Mac**. If the chip says "Apple M1/M2/M3/M4" use this file. If it says "Intel", use the Intel file below.
+
+### macOS — Intel
+
+Same steps as Apple Silicon, but in step 2 click **`LabGrader-1.0.0-x64.dmg`** (≈141 MB) instead.
+
+### Linux
+
+1. Open the [**latest release page**](https://github.com/jabarkle/AI-Autograder-for-Lab-Reports/releases/latest).
+2. Under **Assets**, click **`LabGrader-1.0.0.AppImage`** (≈164 MB).
+3. Make it executable and run:
+   ```bash
+   chmod +x ~/Downloads/LabGrader-1.0.0.AppImage
+   ~/Downloads/LabGrader-1.0.0.AppImage
+   ```
+4. Paste your Anthropic API key into the input box at the top of the main page. Done.
+
+### What to ignore in the Assets list
+
+The release page lists a few extra files: `*.blockmap`, `*.yml`, `builder-debug.yml`, "Source code (zip)", "Source code (tar.gz)". **Skip all of these** — they're metadata for the auto-updater and source archives. You only need the one installer file for your OS.
+
+### Where your data lives
+
+- **Windows:** `%APPDATA%\LabGrader\labs\`
+- **macOS:** `~/Library/Application Support/LabGrader/labs/`
+- **Linux:** `~/.config/LabGrader/labs/`
+
+Uninstalling the app does **not** delete your lab data.
 
 ---
 
-## Install (TAs)
+## Vision
 
-The easiest way to use the system is the prebuilt desktop app.
-
-1. Go to the project's GitHub Releases page and download the file for your OS:
-   - Windows: `LabGrader-Setup-<version>.exe`
-   - macOS:   `LabGrader-<version>-x64.dmg` (Intel) or `-arm64.dmg` (Apple Silicon)
-   - Linux:   `LabGrader-<version>.AppImage`
-2. Double-click to install / open.
-3. On first launch, paste your Anthropic API key in the input box on the main page. The key is stored only for the current session unless you check "Remember", in which case it's encrypted with the OS keychain.
-
-### First-run security warnings (unsigned builds)
-
-The current release is **not** code-signed, so the OS will warn you the first time you launch it.
-
-- **Windows:** "Windows protected your PC" → click "More info" → "Run anyway".
-- **macOS:** Right-click the app → "Open" → "Open" again. Or System Settings → Privacy & Security → "Open Anyway" after the first attempt.
-
-After the first launch the warnings go away.
+This system uses AI to assist TAs in grading student lab reports. The goal is not to replace TA judgment — it is to do the first-pass grading automatically so TAs spend their time reviewing and correcting AI grades rather than grading from scratch. The system works for **any lab report** that follows a standard section structure; the rubric schema is generated dynamically from the Ground Truth document.
 
 ---
 
