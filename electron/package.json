@@ -56,12 +56,12 @@
       "artifactName": "LabGrader-Setup-${version}.${ext}"
     },
     "nsis": {
-      "oneClick": false,
+      "oneClick": true,
       "perMachine": false,
-      "allowToChangeInstallationDirectory": true,
       "createDesktopShortcut": true,
       "createStartMenuShortcut": true,
-      "shortcutName": "Lab Grader"
+      "shortcutName": "Lab Grader",
+      "runAfterFinish": true
     },
     "mac": {
       "target": [
