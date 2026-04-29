@@ -6,6 +6,10 @@
   "author": "CMU AI Fellow Program",
   "license": "MIT",
   "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jabarkle/AI-Autograder-for-Lab-Reports.git"
+  },
   "scripts": {
     "start": "electron .",
     "dev": "cross-env LAB_GRADER_DEV=1 electron .",
@@ -82,10 +86,6 @@
       ],
       "category": "Education",
       "artifactName": "LabGrader-${version}.${ext}"
-    },
-    "publish": {
-      "provider": "github",
-      "releaseType": "release"
     }
   }
 }
