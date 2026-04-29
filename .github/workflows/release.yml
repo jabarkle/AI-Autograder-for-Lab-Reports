@@ -45,7 +45,7 @@ jobs:
 
       - name: Install Electron deps
         working-directory: electron
-        run: npm ci
+        run: npm install --no-audit --no-fund
 
       - name: Build installer (Windows)
         if: matrix.os == 'windows-latest'

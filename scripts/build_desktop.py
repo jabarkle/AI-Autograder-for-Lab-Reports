@@ -47,8 +47,12 @@ def main():
 
     # 3. Electron
     print("\n=== Building installers with electron-builder ===")
-    run([npm, "ci"], cwd=ROOT / "electron")
-    run([npm, "run", "dist"], cwd=ROOT / "electron")
+    electron_dir = ROOT / "electron"
+    if (electron_dir / "package-lock.json").exists():
+        run([npm, "ci"], cwd=electron_dir)
+    else:
+        run([npm, "install", "--no-audit", "--no-fund"], cwd=electron_dir)
+    run([npm, "run", "dist"], cwd=electron_dir)
 
     print("\n✓ Done. Installers are in electron/dist/")
 
